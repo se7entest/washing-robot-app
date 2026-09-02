@@ -1,0 +1,143 @@
+/* cooperate.wxss */
+.container {
+  background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 返回按钮 */
+.back-btn {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 12rpx 24rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 30rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10rpx);
+}
+
+.back-icon {
+  font-size: 48rpx;
+  color: #fff;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.concept-card {
+  margin: 20rpx;
+}
+
+.concept-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16rpx;
+}
+
+.concept-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.8;
+  display: block;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 40rpx 20rpx 20rpx;
+  padding-left: 16rpx;
+  border-left: 8rpx solid #1a73e8;
+}
+
+.mode-cards {
+  padding: 0 20rpx;
+  display: flex;
+  gap: 20rpx;
+}
+
+.mode-card {
+  flex: 1;
+  padding: 24rpx 16rpx;
+  text-align: center;
+}
+
+.mode-icon {
+  font-size: 48rpx;
+  margin-bottom: 12rpx;
+}
+
+.mode-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  display: block;
+}
+
+.mode-desc {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.advantage-list {
+  margin: 0 20rpx 20rpx;
+}
+
+.advantage-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.advantage-item:last-child {
+  border-bottom: none;
+}
+
+.advantage-icon {
+  font-size: 36rpx;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.advantage-content {
+  flex: 1;
+}
+
+.advantage-title {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
+.advantage-desc {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.form-card {
+  margin: 20rpx;
+}
+
+.required {
+  color: #ff4d4f;
+}
+
+.picker-display {
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}

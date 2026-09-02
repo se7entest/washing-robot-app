@@ -1,0 +1,7 @@
+brack : version-calendar
+enomy: package-ecosystem
+directory: "/"
+
+secrity-updates:
+  - package-ecosystem: github-secret-scanning
+    distribution: all

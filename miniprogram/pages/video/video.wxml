@@ -1,0 +1,32 @@
+<!--video.wxml-->
+<view class="container">
+  <!-- 视频列表 -->
+  <view class="video-list" wx:if="{{videos.length > 0}}">
+    <view
+      class="video-card card"
+      wx:for="{{videos}}"
+      wx:key="_id"
+      bindtap="onVideoTap"
+      data-id="{{item._id}}"
+    >
+      <view class="video-thumb">
+        <image class="video-image" src="{{item.thumbnail || '/assets/images/default-video.png'}}" mode="aspectFill"></image>
+        <view class="video-play">▶</view>
+      </view>
+      <view class="video-info">
+        <text class="video-title">{{item.title}}</text>
+        <view class="video-meta">
+          <text class="video-date">{{item.publish_date}}</text>
+          <text class="video-desc">{{item.description}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 暂无视频 -->
+  <view class="video-placeholder" wx:else>
+    <view class="video-placeholder-icon">🎬</view>
+    <text class="video-placeholder-text">视频内容即将上线</text>
+    <text class="video-placeholder-desc">敬请期待...</text>
+  </view>
+</view>

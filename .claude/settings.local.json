@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://raw.githubusercontent.com/se7entest/washing-robot-app/main/data/cases.json\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/SE7Entest/washing-robot-app/main/data/cases.json\")"
+    ]
+  }
+}

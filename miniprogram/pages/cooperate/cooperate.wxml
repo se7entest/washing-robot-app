@@ -1,0 +1,65 @@
+<!--cooperate.wxml-->
+<view class="container">
+  <!-- 返回按钮 -->
+  <view class="back-btn" bindtap="onGoBack">
+    <text class="back-icon">‹</text>
+  </view>
+
+  <!-- 合作理念 -->
+  <view class="concept-card card">
+    <view class="concept-title">合作理念</view>
+    <text class="concept-content">{{concept.content}}</text>
+  </view>
+
+  <!-- 合作模式 -->
+  <view class="section-title">合作模式</view>
+  <view class="mode-cards">
+    <view class="mode-card card" wx:for="{{modes}}" wx:key="title">
+      <view class="mode-icon">{{item.icon}}</view>
+      <view class="mode-title">{{item.title}}</view>
+      <text class="mode-desc">{{item.desc}}</text>
+    </view>
+  </view>
+
+  <!-- 合作优势 -->
+  <view class="section-title">合作优势</view>
+  <view class="advantage-list card">
+    <view class="advantage-item" wx:for="{{advantages}}" wx:key="title">
+      <text class="advantage-icon">{{item.icon}}</text>
+      <view class="advantage-content">
+        <text class="advantage-title">{{item.title}}</text>
+        <text class="advantage-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 合作意向表单 -->
+  <view class="section-title">提交合作意向</view>
+  <view class="form-card card">
+    <view class="form-item">
+      <text class="form-label">姓名 <text class="required">*</text></text>
+      <input class="form-input" type="nickname" placeholder="请输入您的姓名" value="{{form.name}}" bindinput="onInputName" />
+    </view>
+    <view class="form-item">
+      <text class="form-label">电话 <text class="required">*</text></text>
+      <input class="form-input" type="number" maxlength="11" placeholder="请输入您的手机号" value="{{form.phone}}" bindinput="onInputPhone" />
+    </view>
+    <view class="form-item">
+      <text class="form-label">公司名称</text>
+      <input class="form-input" placeholder="请输入公司名称" value="{{form.company}}" bindinput="onInputCompany" />
+    </view>
+    <view class="form-item">
+      <text class="form-label">合作类型</text>
+      <picker mode="selector" range="{{cooperationTypes}}" bindchange="onTypeChange">
+        <view class="picker-display">
+          {{form.type || '请选择合作类型'}}
+        </view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <text class="form-label">合作意向描述</text>
+      <textarea class="form-textarea" placeholder="请描述您的合作意向" value="{{form.description}}" bindinput="onInputDescription"></textarea>
+    </view>
+    <button class="btn-primary" bindtap="submitCooperation">提交合作意向</button>
+  </view>
+</view>
