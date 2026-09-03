@@ -9,6 +9,7 @@
     "pages/case-detail/case-detail",
     "pages/video/video",
     "pages/video-play/video-play",
+    "pages/news-detail/news-detail",
     "pages/cooperate/cooperate",
     "pages/appointment/appointment"
   ],

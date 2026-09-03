@@ -1,5 +1,12 @@
 <!--index.wxml-->
 <view class="container">
+  <!-- 轮播图 -->
+  <swiper class="banner-swiper" indicator-dots="{{banners.length > 1}}" autoplay="{{banners.length > 1}}" circular interval="4000" wx:if="{{banners.length > 0}}">
+    <swiper-item wx:for="{{banners}}" wx:key="_id">
+      <image class="banner-image" src="{{item.image}}" mode="aspectFill" bindtap="onBannerTap" data-link="{{item.link}}"></image>
+    </swiper-item>
+  </swiper>
+
   <!-- 科技风头部 -->
   <view class="hero-section">
     <view class="hero-bg">
@@ -114,11 +121,10 @@
       </view>
     </view>
     <view class="news-list">
-      <view class="news-item" wx:for="{{news}}" wx:key="_id">
+      <view class="news-item" wx:for="{{news}}" wx:key="_id" bindtap="goToNewsDetail" data-id="{{item._id}}">
         <view class="news-type-badge news-type-{{item.type}}">{{ getTypeLabel(item.type) }}</view>
         <view class="news-content">
           <text class="news-title">{{item.title}}</text>
-          <text class="news-content-text">{{item.content}}</text>
         </view>
         <text class="news-time">{{item.date || ''}}</text>
       </view>

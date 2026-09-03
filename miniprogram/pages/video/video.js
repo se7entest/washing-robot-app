@@ -33,11 +33,15 @@ Page({
         break
       }
     }
-    if (video && video.video_url) {
-      var poster = video.thumbnail || '/assets/images/video-placeholder.png'
-      wx.navigateTo({
-        url: '/pages/video-play/video-play?url=' + encodeURIComponent(video.video_url) + '&title=' + encodeURIComponent(video.title) + '&description=' + encodeURIComponent(video.description || '') + '&date=' + encodeURIComponent(video.publish_date || '') + '&poster=' + encodeURIComponent(poster)
-      })
+    if (!video) return
+    // 视频未上传时显示提示
+    if (!video.video_url) {
+      wx.showToast({ title: '视频暂未上传', icon: 'none' })
+      return
     }
+    var poster = video.thumbnail || '/assets/images/video-placeholder.png'
+    wx.navigateTo({
+      url: '/pages/video-play/video-play?url=' + encodeURIComponent(video.video_url) + '&title=' + encodeURIComponent(video.title) + '&description=' + encodeURIComponent(video.description || '') + '&date=' + encodeURIComponent(video.publish_date || '') + '&poster=' + encodeURIComponent(poster)
+    })
   }
 })

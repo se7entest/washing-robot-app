@@ -1,0 +1,101 @@
+/* news-detail.wxss */
+.container {
+  background: #0a0e27;
+  min-height: 100vh;
+  padding: 0 32rpx;
+}
+
+/* 返回按钮 */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 32rpx 0;
+  color: rgba(0, 212, 255, 0.8);
+  font-size: 28rpx;
+}
+
+.back-btn text {
+  margin-top: 4rpx;
+}
+
+/* 加载中 */
+.loading {
+  text-align: center;
+  padding: 100rpx 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 错误 */
+.error {
+  text-align: center;
+  padding: 100rpx 0;
+  color: #ff5064;
+}
+
+/* 内容区 */
+.content {
+  padding-bottom: 60rpx;
+}
+
+/* 头部 */
+.news-header {
+  margin-bottom: 32rpx;
+}
+
+.news-type-badge {
+  display: inline-block;
+  font-size: 22rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.news-type-article {
+  background: rgba(0, 212, 255, 0.15);
+  color: #00d4ff;
+  border: 1rpx solid rgba(0, 212, 255, 0.3);
+}
+
+.news-type-video {
+  background: rgba(255, 80, 100, 0.15);
+  color: #ff5064;
+  border: 1rpx solid rgba(255, 80, 100, 0.3);
+}
+
+.news-type-device {
+  background: rgba(0, 255, 170, 0.15);
+  color: #00ffaa;
+  border: 1rpx solid rgba(0, 255, 170, 0.3);
+}
+
+.news-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 16rpx;
+}
+
+.news-date {
+  display: block;
+  font-size: 24rpx;
+  color: rgba(0, 212, 255, 0.5);
+}
+
+/* 封面图 */
+.news-cover {
+  width: 100%;
+  height: 400rpx;
+  border-radius: 16rpx;
+  margin-bottom: 32rpx;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* 正文 */
+.news-body {
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+}

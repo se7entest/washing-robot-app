@@ -91,6 +91,12 @@ Page({
     wx.navigateTo({ url: '/pages/case-detail/case-detail?id=' + id })
   },
 
+  // 跳转到新闻详情
+  goToNewsDetail: function(e) {
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({ url: '/pages/news-detail/news-detail?id=' + id })
+  },
+
   // 跳转到视频页
   goToVideo: function() {
     wx.navigateTo({ url: '/pages/video/video' })
