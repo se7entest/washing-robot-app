@@ -29,7 +29,3 @@ admin/server.log
 # 大体积媒体文件（超过小程序2MB限制）
 miniprogram/assets/videos/
 push_via_api*.js
-
-push_via_api*.js
-push_to_github*.py
-temp scripts
