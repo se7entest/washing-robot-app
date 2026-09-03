@@ -4,7 +4,7 @@
 const GITHUB_REPO = 'se7entest/washing-robot-app'
 const GITHUB_BRANCH = 'main'
 const DATA_PATH = 'data'
-const CDN_BASE = 'https://cdn.jsdelivr.net/gh/' + GITHUB_REPO + '@' + GITHUB_BRANCH
+const CDN_BASE = 'https://raw.githubusercontent.com/' + GITHUB_REPO + '/' + GITHUB_BRANCH
 const MAX_RETRY = 3
 const RETRY_DELAY = 1000
 
