@@ -5,6 +5,18 @@
   padding-bottom: 40rpx;
 }
 
+/* 轮播图 */
+.banner-swiper {
+  width: 100%;
+  height: 400rpx;
+}
+
+.banner-image {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+}
+
 /* 卡片通用样式 */
 .section-card {
   margin: 0 24rpx 24rpx;

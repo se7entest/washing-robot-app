@@ -1,12 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- 轮播图 -->
-  <swiper class="banner-swiper" indicator-dots="{{banners.length > 1}}" autoplay="{{banners.length > 1}}" circular interval="4000" wx:if="{{banners.length > 0}}">
-    <swiper-item wx:for="{{banners}}" wx:key="_id">
-      <image class="banner-image" src="{{item.image}}" mode="aspectFill" bindtap="onBannerTap" data-link="{{item.link}}"></image>
-    </swiper-item>
-  </swiper>
-
   <!-- 科技风头部 -->
   <view class="hero-section">
     <view class="hero-bg">

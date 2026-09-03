@@ -3,11 +3,13 @@ var request = require('../../utils/request')
 
 Page({
   data: {
-    company: null
+    company: null,
+    banners: []
   },
 
   onLoad: function() {
     this.loadCompany()
+    this.loadBanners()
   },
 
   // 加载公司简介
@@ -15,15 +17,33 @@ Page({
     var self = this
     request.getJSON('company', function(err, company) {
       if (err) {
-        console.error('[company] 加载异常:', err)
-        return
+        company = null
       }
-      if (company) {
-        self.setData({ company: company })
-      } else {
-        console.error('[company] 加载失败：company 为 null')
-      }
+      self.setData({ company: company })
     })
+  },
+
+  // 加载轮播图
+  loadBanners: function() {
+    var self = this
+    request.getJSON('settings', function(err, settings) {
+      if (err) {
+        settings = null
+      }
+      var banners = []
+      if (settings && settings.banners) {
+        banners = settings.banners
+      }
+      self.setData({ banners: banners })
+    })
+  },
+
+  // 轮播图点击
+  onBannerTap: function(e) {
+    var link = e.currentTarget.dataset.link
+    if (link) {
+      wx.navigateTo({ url: link })
+    }
   },
 
   onGoBack: function() {
