@@ -1,0 +1,63 @@
+
+{
+  "pages": [
+    "pages/index/index",
+    "pages/company/company",
+    "pages/device/device",
+    "pages/device-detail/device-detail",
+    "pages/case/case",
+    "pages/case-detail/case-detail",
+    "pages/video/video",
+    "pages/video-play/video-play",
+    "pages/news-detail/news-detail",
+    "pages/cooperate/cooperate",
+    "pages/appointment/appointment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1a73e8",
+    "navigationBarTitleText": "清洗机器人",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1a73e8",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/device/device",
+        "text": "设备",
+        "iconPath": "assets/icons/device.png",
+        "selectedIconPath": "assets/icons/device-active.png"
+      },
+      {
+        "pagePath": "pages/case/case",
+        "text": "案例",
+        "iconPath": "assets/icons/case.png",
+        "selectedIconPath": "assets/icons/case-active.png"
+      },
+      {
+        "pagePath": "pages/cooperate/cooperate",
+        "text": "合作",
+        "iconPath": "assets/icons/cooperate.png",
+        "selectedIconPath": "assets/icons/cooperate-active.png"
+      },
+      {
+        "pagePath": "pages/appointment/appointment",
+        "text": "预约",
+        "iconPath": "assets/icons/appointment.png",
+        "selectedIconPath": "assets/icons/appointment-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

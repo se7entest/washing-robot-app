@@ -1,0 +1,624 @@
+/* index.wxss - 科技感设计 */
+.container {
+  background: #0a0e27;
+  min-height: 100vh;
+}
+
+/* ===== 科技风头部 ===== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 440rpx;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 40%, #0d1f3c 100%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.06) 1px, transparent 1px);
+  background-size: 60rpx 60rpx;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60rpx, 60rpx); }
+}
+
+.hero-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  background: linear-gradient(180deg, rgba(0, 212, 255, 0.15) 0%, transparent 100%);
+  animation: scanline 4s ease-in-out infinite;
+}
+
+@keyframes scanline {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(360rpx); opacity: 0.3; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80rpx 40rpx 0;
+}
+
+.hero-title {
+  font-size: 52rpx;
+  font-weight: 700;
+  color: #00d4ff;
+  letter-spacing: 6rpx;
+  text-shadow: 0 0 30rpx rgba(0, 212, 255, 0.6), 0 0 60rpx rgba(0, 212, 255, 0.3);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 22rpx;
+  color: rgba(0, 212, 255, 0.5);
+  letter-spacing: 4rpx;
+  margin-top: 16rpx;
+  display: block;
+  text-transform: uppercase;
+}
+
+.hero-desc {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 24rpx;
+  display: block;
+  letter-spacing: 2rpx;
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -2rpx;
+  left: 0;
+  right: 0;
+  height: 60rpx;
+  background: #0a0e27;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+/* ===== 快捷入口 - 一横排六个个性化按钮 ===== */
+.quick-section {
+  margin: 0 24rpx 24rpx;
+  padding: 28rpx 16rpx;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 24rpx;
+  border: 1rpx solid rgba(0, 212, 255, 0.15);
+  backdrop-filter: blur(10rpx);
+}
+
+.quick-title {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.quick-title-line {
+  flex: 1;
+  height: 1rpx;
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.4) 0%, transparent 100%);
+}
+
+.quick-title-text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #00d4ff;
+  letter-spacing: 4rpx;
+  white-space: nowrap;
+  text-shadow: 0 0 16rpx rgba(0, 212, 255, 0.4);
+}
+
+.quick-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rpx;
+}
+
+.quick-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rpx;
+  flex: 1;
+}
+
+.quick-item-text {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 1rpx;
+  white-space: nowrap;
+}
+
+/* ===== 通用图标容器 ===== */
+.qi {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.qi svg {
+  width: 38rpx;
+  height: 38rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.quick-item:active .qi {
+  transform: scale(0.88);
+  opacity: 0.8;
+}
+
+/* ── 1. 公司简介 - 青色科技框 + 四角装饰 ── */
+.qi-company {
+  background: rgba(0, 212, 255, 0.12);
+  border: 1rpx solid rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  box-shadow: 0 0 20rpx rgba(0, 212, 255, 0.15);
+}
+
+.qi-corner {
+  position: absolute;
+  width: 12rpx;
+  height: 12rpx;
+  border-color: rgba(0, 212, 255, 0.8);
+  border-style: solid;
+  border-width: 0;
+}
+
+.qi-corner.tl { top: 4rpx; left: 4rpx; border-top-width: 2rpx; border-left-width: 2rpx; }
+.qi-corner.tr { top: 4rpx; right: 4rpx; border-top-width: 2rpx; border-right-width: 2rpx; }
+.qi-corner.bl { bottom: 4rpx; left: 4rpx; border-bottom-width: 2rpx; border-left-width: 2rpx; }
+.qi-corner.br { bottom: 4rpx; right: 4rpx; border-bottom-width: 2rpx; border-right-width: 2rpx; }
+
+/* ── 2. 设备介绍 - 蓝色圆形雷达 + 同心环 ── */
+.qi-device {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: rgba(100, 180, 255, 0.12);
+  border: 2rpx dashed rgba(100, 180, 255, 0.5);
+  color: #64b4ff;
+  box-shadow: 0 0 24rpx rgba(100, 180, 255, 0.2);
+  animation: radarSpin 8s linear infinite;
+}
+
+@keyframes radarSpin {
+  0% { border-color: rgba(100, 180, 255, 0.5); }
+  50% { border-color: rgba(100, 180, 255, 0.2); }
+  100% { border-color: rgba(100, 180, 255, 0.5); }
+}
+
+.qi-ring {
+  position: absolute;
+  width: 56rpx;
+  height: 56rpx;
+  border: 1rpx solid rgba(100, 180, 255, 0.3);
+  border-radius: 50%;
+}
+
+.qi-dot {
+  position: absolute;
+  width: 8rpx;
+  height: 8rpx;
+  background: #64b4ff;
+  border-radius: 50%;
+  top: 16rpx;
+  right: 20rpx;
+  box-shadow: 0 0 10rpx rgba(100, 180, 255, 0.8);
+}
+
+/* ── 3. 服务案例 - 绿色数据条 ── */
+.qi-case {
+  background: rgba(0, 255, 170, 0.1);
+  border: 1rpx solid rgba(0, 255, 170, 0.3);
+  color: #00ffaa;
+  box-shadow: 0 0 20rpx rgba(0, 255, 170, 0.15);
+}
+
+.qi-bars {
+  position: absolute;
+  bottom: 8rpx;
+  left: 8rpx;
+  right: 8rpx;
+  height: 20rpx;
+  display: flex;
+  align-items: flex-end;
+  gap: 4rpx;
+}
+
+.qi-bar {
+  flex: 1;
+  background: rgba(0, 255, 170, 0.5);
+  border-radius: 2rpx;
+}
+
+.qi-bar:nth-child(1) { height: 40%; }
+.qi-bar:nth-child(2) { height: 70%; }
+.qi-bar:nth-child(3) { height: 100%; }
+
+/* ── 4. 合作意向 - 橙色六边形 ── */
+.qi-cooperate {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 16rpx;
+  background: rgba(255, 170, 0, 0.12);
+  border: 1rpx solid rgba(255, 170, 0, 0.35);
+  color: #ffaa00;
+  box-shadow: 0 0 20rpx rgba(255, 170, 0, 0.15);
+  transform: rotate(45deg);
+}
+
+.qi-cooperate svg {
+  transform: rotate(-45deg);
+}
+
+.qi-hex {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  border: 1rpx solid rgba(255, 170, 0, 0.25);
+  transform: rotate(45deg);
+}
+
+/* ── 5. 预约演示 - 紫色脉冲圆 ── */
+.qi-appointment {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: rgba(200, 100, 255, 0.12);
+  border: 2rpx solid rgba(200, 100, 255, 0.4);
+  color: #c864ff;
+  box-shadow: 0 0 24rpx rgba(200, 100, 255, 0.2);
+}
+
+.qi-pulse {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  border: 1rpx solid rgba(200, 100, 255, 0.4);
+  border-radius: 50%;
+  animation: pulseOut 2s ease-out infinite;
+}
+
+.qi-pulse-2 {
+  animation: pulseOut 2s ease-out infinite 1s;
+}
+
+@keyframes pulseOut {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ── 6. 视频演示 - 红色能量块 ── */
+.qi-video {
+  background: rgba(255, 80, 100, 0.12);
+  border: 1rpx solid rgba(255, 80, 100, 0.35);
+  color: #ff5064;
+  box-shadow: 0 0 20rpx rgba(255, 80, 100, 0.15);
+}
+
+.qi-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 14rpx solid rgba(255, 80, 100, 0.4);
+  border-top: 9rpx solid transparent;
+  border-bottom: 9rpx solid transparent;
+  left: 14rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ── 默认样式 ── */
+.qi-default {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 16rpx;
+}
+
+/* ===== 最新动态 ===== */
+.news-section {
+  margin: 0 24rpx 24rpx;
+  padding: 28rpx 24rpx;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1rpx solid rgba(0, 212, 255, 0.15);
+}
+
+.news-list {
+  padding: 0;
+}
+
+.news-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.05);
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-type-badge {
+  font-size: 20rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 8rpx;
+  white-space: nowrap;
+  margin-top: 4rpx;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.news-type-article {
+  background: rgba(0, 212, 255, 0.15);
+  color: #00d4ff;
+  border: 1rpx solid rgba(0, 212, 255, 0.3);
+}
+
+.news-type-video {
+  background: rgba(255, 80, 100, 0.15);
+  color: #ff5064;
+  border: 1rpx solid rgba(255, 80, 100, 0.3);
+}
+
+.news-type-device {
+  background: rgba(0, 255, 170, 0.15);
+  color: #00ffaa;
+  border: 1rpx solid rgba(0, 255, 170, 0.3);
+}
+
+.news-dot {
+  width: 8rpx;
+  height: 8rpx;
+  background: #00d4ff;
+  border-radius: 50%;
+  margin-top: 14rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+  box-shadow: 0 0 10rpx rgba(0, 212, 255, 0.6);
+}
+
+.news-content {
+  flex: 1;
+}
+
+.news-title {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  display: block;
+}
+
+.news-content-text {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8rpx;
+  display: block;
+  line-height: 1.6;
+}
+
+.news-time {
+  font-size: 22rpx;
+  color: rgba(0, 212, 255, 0.4);
+  white-space: nowrap;
+  margin-left: 16rpx;
+  align-self: flex-start;
+  margin-top: 4rpx;
+}
+
+/* ===== 视频演示 ===== */
+.video-section {
+  margin: 0 24rpx 24rpx;
+  padding: 28rpx 24rpx;
+  background: linear-gradient(135deg, rgba(255, 80, 100, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1rpx solid rgba(255, 80, 100, 0.15);
+}
+
+.section {
+  margin: 0 24rpx 24rpx;
+  padding: 28rpx 24rpx;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 24rpx;
+  border: 1rpx solid rgba(0, 212, 255, 0.12);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.section-dot {
+  width: 8rpx;
+  height: 8rpx;
+  background: #00d4ff;
+  border-radius: 50%;
+  box-shadow: 0 0 12rpx rgba(0, 212, 255, 0.6);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2rpx;
+}
+
+.section-more {
+  font-size: 24rpx;
+  color: rgba(0, 212, 255, 0.6);
+}
+
+.video-preview {
+  position: relative;
+  border-radius: 16rpx;
+  overflow: hidden;
+  border: 1rpx solid rgba(255, 255, 255, 0.08);
+}
+
+.video-preview-image {
+  width: 100%;
+  height: 360rpx;
+  display: block;
+}
+
+.video-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-play-btn {
+  width: 96rpx;
+  height: 96rpx;
+  background: rgba(255, 80, 100, 0.2);
+  border: 2rpx solid rgba(255, 80, 100, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff5064;
+  box-shadow: 0 0 30rpx rgba(255, 80, 100, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 30rpx rgba(255, 80, 100, 0.3); }
+  50% { box-shadow: 0 0 50rpx rgba(255, 80, 100, 0.5); }
+}
+
+.video-preview-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 24rpx;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.video-preview-title {
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: 600;
+  display: block;
+}
+
+.video-preview-desc {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 8rpx;
+  display: block;
+}
+
+.video-placeholder {
+  height: 360rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16rpx;
+  border: 1rpx dashed rgba(255, 80, 100, 0.2);
+}
+
+.placeholder-icon {
+  width: 80rpx;
+  height: 80rpx;
+  color: rgba(255, 80, 100, 0.3);
+  margin-bottom: 16rpx;
+}
+
+.video-placeholder-text {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 26rpx;
+}
+
+/* ===== 精选案例 ===== */
+.case-scroll {
+  white-space: nowrap;
+}
+
+.case-list {
+  display: inline-flex;
+}
+
+.case-item {
+  width: 300rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.case-item:last-child {
+  margin-right: 0;
+}
+
+.case-image {
+  width: 300rpx;
+  height: 200rpx;
+  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1rpx solid rgba(255, 255, 255, 0.08);
+}
+
+.case-info {
+  margin-top: 12rpx;
+}
+
+.case-title {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.case-location {
+  font-size: 24rpx;
+  color: rgba(0, 212, 255, 0.5);
+  margin-top: 8rpx;
+  display: block;
+}
+
+/* ===== 底部 ===== */
+.footer {
+  padding: 48rpx 24rpx 32rpx;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 2rpx;
+}

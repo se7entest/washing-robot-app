@@ -1,0 +1,49 @@
+<!--case.wxml-->
+<view class="container">
+  <!-- 返回按钮 -->
+  <view class="back-btn" bindtap="onGoBack">
+    <text class="back-icon">‹</text>
+  </view>
+
+  <!-- 分类筛选 -->
+  <view class="filter-bar card">
+    <scroll-view class="filter-scroll" scroll-x>
+      <view class="filter-list">
+        <view
+          class="filter-item {{currentFilter === item.id ? 'active' : ''}}"
+          wx:for="{{filters}}"
+          wx:key="id"
+          bindtap="onFilterTap"
+          data-id="{{item.id}}"
+        >
+          {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 案例网格 -->
+  <view class="case-grid" wx:if="{{cases.length > 0}}">
+    <view
+      class="case-card"
+      wx:for="{{cases}}"
+      wx:key="_id"
+      bindtap="goToDetail"
+      data-id="{{item._id}}"
+    >
+      <image class="case-image" src="{{item.image}}" mode="aspectFill"></image>
+      <view class="case-content">
+        <text class="case-title">{{item.title}}</text>
+        <view class="case-meta">
+          <text class="case-location">📍 {{item.location}}</text>
+          <text class="case-date">{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text>暂无服务案例</text>
+  </view>
+</view>

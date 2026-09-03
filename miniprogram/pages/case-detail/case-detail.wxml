@@ -1,0 +1,36 @@
+<!--case-detail.wxml-->
+<view class="container" wx:if="{{case}}">
+  <!-- 案例图片 -->
+  <image class="case-detail-image" src="{{case.image}}" mode="widthFix"></image>
+
+  <!-- 基本信息 -->
+  <view class="card info-card">
+    <view class="case-title">{{case.title}}</view>
+    <view class="case-meta">
+      <text class="meta-item">📍 {{case.location}}</text>
+      <text class="meta-item">📅 {{case.date}}</text>
+    </view>
+  </view>
+
+  <!-- 挑战 -->
+  <view class="card section-card">
+    <view class="section-title">项目挑战</view>
+    <text class="section-content">{{case.challenge}}</text>
+  </view>
+
+  <!-- 解决方案 -->
+  <view class="card section-card">
+    <view class="section-title">解决方案</view>
+    <text class="section-content">{{case.solution}}</text>
+  </view>
+
+  <!-- 客户评价 -->
+  <view class="card review-card" wx:if="{{case.review}}">
+    <view class="section-title">客户评价</view>
+    <text class="review-content">"{{case.review}}"</text>
+  </view>
+</view>
+
+<view class="empty" wx:else>
+  <text>案例不存在</text>
+</view>
