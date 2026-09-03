@@ -34,6 +34,8 @@ Page({
       if (settings && settings.banners) {
         banners = settings.banners
       }
+      console.log("settings:", settings);
+      console.log("banners data:", banners);
       self.setData({ banners: banners })
     })
   },
